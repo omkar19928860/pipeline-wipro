@@ -10,14 +10,17 @@ stages:
       - task: TerraformInstaller@1
         inputs:
           terraformVersion: 'latest'
-    
+ - stage: init
+   jobs:
+   - job: init
+     steps:
+     - task: TerraformTask@5
+       inputs:
+         provider: 'azurerm'
+         command: 'init'
+         workingDirectory: '$(System.DefaultWorkingDirectory)/Dev'
+         backendAzureRmStorageAccountName: 'omkarst345'
+         backendAzureRmContainerName: 'tfstate'
+         backendAzureRmKey: 'dev.todoapp.tfstate'
+      
 
-      - task: TerraformTask@5
-        inputs:
-          provider: 'azurerm'
-          command: 'init'
-          workingDirectory: '$(System.DefaultWorkingDirectory)/Dev'
-          backendServiceArm: 'omkarwiprosc'
-          backendAzureRmStorageAccountName: 'omkarst345'
-          backendAzureRmContainerName: 'tfstate'
-          backendAzureRmKey: 'dev.todoapp.tfstate'
