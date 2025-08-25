@@ -1,0 +1,14 @@
+
+trigger:
+- main
+
+pool: omkarwipropool
+ 
+stages:
+ - stage: init
+   jobs:
+    - job : init
+      steps:
+      
+
+       
