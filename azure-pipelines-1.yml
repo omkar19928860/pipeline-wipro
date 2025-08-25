@@ -2,14 +2,7 @@ trigger:
  - main
 pool: omkarwipropool
 
-stages:
- - stage: install
-   jobs:
-    - job : terraforminstall
-      steps:
-      - task: TerraformInstaller@1
-        inputs:
-          terraformVersion: 'latest'
+stages:   
  - stage: init
    jobs:
    - job: init
