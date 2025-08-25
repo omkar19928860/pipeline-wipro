@@ -18,7 +18,7 @@ stages:
         inputs:
           provider: 'azurerm'
           command: 'init'
-          workingDirectory: '$(System.DefaultWorkingDirectory)/pipeline-wipro'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/Dev'
           backendServiceArm: 'omkarwiprosc'
           backendAzureRmResourceGroupName: 'omkarrg'
           backendAzureRmStorageAccountName: 'omkarst345'
