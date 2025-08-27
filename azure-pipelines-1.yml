@@ -3,14 +3,17 @@ trigger:
 pool: omkarwipropool
 
 stages:   
- - stage: init
+ - stage: install
    jobs:
-   - job: init
+   - job: install
      steps:
      - task: TerraformInstaller@1
        inputs:
-         terraformVersion: 'latest'
-     
+         terraformVersion: 'latest'  
+ - stage: init
+   jobs:
+   - job: inint
+     steps:    
      - task: TerraformTask@5
        inputs:
          provider: 'azurerm'
@@ -20,4 +23,16 @@ stages:
          backendAzureRmStorageAccountName: 'omkarst345'
          backendAzureRmContainerName: 'tfstate'
          backendAzureRmKey: 'dev.todoapp.tfstate'
+ - stage : fmtplan
+   jobs:  
+    - job: fmtplan
+      steps:
+      - task: TerraformTask@5
+        inputs:
+          provider: 'azurerm'
+          command: 'plan'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/Dev'
+          environmentServiceNameAzureRM: 'omkarwiprosc'
+      
+
 
