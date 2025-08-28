@@ -32,7 +32,7 @@ stages:
           provider: 'azurerm'
           command: 'plan'
           workingDirectory: '$(System.DefaultWorkingDirectory)/Dev'
-          environmentServiceNameAzureRM: 'omkarwiprosc'
+          environmentServiceNameAzureRM: 'omkarnsc'
       
 
 
