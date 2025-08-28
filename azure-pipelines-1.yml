@@ -19,8 +19,8 @@ stages:
          provider: 'azurerm'
          command: 'init'
          workingDirectory: '$(System.DefaultWorkingDirectory)/Dev'
-         backendServiceArm: 'omkarwiprosc'
-         backendAzureRmStorageAccountName: 'omkarst345'
+         backendServiceArm: 'omkarnsc'
+         backendAzureRmStorageAccountName: 'omkarst3455'
          backendAzureRmContainerName: 'tfstate'
          backendAzureRmKey: 'dev.todoapp.tfstate'
  - stage : fmtplan
