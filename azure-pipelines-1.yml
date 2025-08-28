@@ -12,7 +12,7 @@ stages:
          terraformVersion: 'latest'  
  - stage: init
    jobs:
-   - job: inint
+   - job: init
      steps:    
      - task: TerraformTask@5
        inputs:
